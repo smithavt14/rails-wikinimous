@@ -1,0 +1,10 @@
+<% @articles.each do |article| %>
+  <ul>
+    <li>
+    <h1><%= link_to article.title, article_path(article) %></h1>
+    <p><%= article.content %></p>
+    </li>
+  </ul>
+<% end %>
+
+<%= link_to "New Article", new_article_path %>
