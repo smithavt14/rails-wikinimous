@@ -1,9 +1,6 @@
 class ArticlesController < ApplicationController
 
   def home
-  end
-
-  def index         # GET /restaurants
     @articles = Article.all
   end
 
@@ -18,7 +15,7 @@ class ArticlesController < ApplicationController
   def create        # POST /restaurants
     @article = Article.create(article_params)
     @article.save
-    redirect_to articles_path
+    redirect_to root_path
   end
 
   def edit          # GET /restaurants/:id/edit
@@ -34,7 +31,7 @@ class ArticlesController < ApplicationController
   def destroy       # DELETE /restaurants/:id
     @article = Article.find(params[:id])
     @article.destroy
-    redirect_to articles_path
+    redirect_to root_path
   end
 
   private
